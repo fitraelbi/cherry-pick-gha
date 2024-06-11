@@ -1,17 +1,17 @@
 on:
-  # pull_request:
-  #   branches:
-  #     - develop
-  #   types: ["opened"]
-  push:
+  pull_request:
     branches:
-      - 'release/hotfix'
+      - develop
+    types: ["opened"]
+  # push:
+  #   branches:
+  #     - 'release/hotfix'
 
 jobs:
   cherry_pick_release_v1_0:
     runs-on: ubuntu-latest
     name: Cherry pick into uat
-    # if: ${{ contains(github.event.pull_request.head.ref, 'release/hotfix') }}
+    if: ${{ contains(github.event.pull_request.head.ref, 'release/hotfix') }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
