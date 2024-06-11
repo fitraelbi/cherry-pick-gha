@@ -20,7 +20,7 @@ jobs:
           branch: uat
           labels: |
             cherry-pick
-          reviewers: |
-            fitraelbi
+          # reviewers: |
+          #   fitraelbi
 env:
   GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
