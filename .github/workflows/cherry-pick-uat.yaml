@@ -18,7 +18,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Cherry pick into uat
-        uses: carloscastrojumo/github-cherry-pick-action@v1.0.6
+        uses: carloscastrojumo/github-cherry-pick-action@v1.0.7
         with:
           title: cherry pick bre
           branch: uat
