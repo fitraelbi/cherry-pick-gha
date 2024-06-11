@@ -20,6 +20,8 @@ jobs:
           branch: uat
           labels: |
             cherry-pick
+          cherry-pick-branch: deploy-to-uat
+          force: true
           # reviewers: |
           #   fitraelbi
 env:
