@@ -3,6 +3,9 @@ on:
     branches:
       - develop
     types: ["opened"]
+  # push:
+  #   branches:
+  #     - 'release/hotfix'
 
 jobs:
   cherry_pick_release_v1_0:
@@ -15,8 +18,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Cherry pick into uat
-        uses: carloscastrojumo/github-cherry-pick-action@v1.0.3
+        uses: carloscastrojumo/github-cherry-pick-action@v1.0.10
         with:
+          # title: coba
           branch: uat
           cherry-pick-branch: deploy-to-uat
           force: true
