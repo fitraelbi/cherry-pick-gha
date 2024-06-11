@@ -20,6 +20,7 @@ jobs:
       - name: Cherry pick into uat
         uses: carloscastrojumo/github-cherry-pick-action@v1.0.6
         with:
+          title: cherry pick bre
           branch: uat
           cherry-pick-branch: deploy-to-uat
           force: true
