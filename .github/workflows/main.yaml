@@ -1,0 +1,26 @@
+on:
+  pull_request:
+    branches:
+      - develop
+    types: ["opened"]
+
+jobs:
+  cherry_pick_release_v1_0:
+    runs-on: ubuntu-latest
+    name: Cherry pick into uat
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'uat') && github.event.pull_request.merged == true }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Cherry pick into uat
+        uses: carloscastrojumo/github-cherry-pick-action@v1.0.1
+        with:
+          branch: uat
+          labels: |
+            cherry-pick
+          reviewers: |
+            fitraelbi
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
